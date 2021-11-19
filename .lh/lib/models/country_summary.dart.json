@@ -1,0 +1,86 @@
+{
+    "sourceFile": "lib/models/country_summary.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 17,
+            "patches": [
+                {
+                    "date": 1633968414809,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1633971792357,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,8 @@\n       json[\"Confirmed\"],\n       json[\"Deaths\"],\n       json[\"Recovered\"],\n       json[\"Active\"],\n-      DateTime.parse(json[\"Date\"]),\n+      DateTime.now(),\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1635181279020,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,13 +10,13 @@\n       this.active, this.date);\n \n   factory CountrySummaryModel.fromJson(Map<String, dynamic> json) {\n     return CountrySummaryModel(\n-      json[\"departamento_nom\"],\n-      json[\"Confirmed\"],\n-      json[\"Deaths\"],\n-      json[\"Recovered\"],\n-      json[\"Active\"],\n+      json[\"ciudad_municipio\"],\n+      json[\"casos\"],\n+      json[\"fallecidos\"],\n+      json[\"recuperados\"],\n+      json[\"activos\"],\n       DateTime.now(),\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1635181304085,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n class CountrySummaryModel {\n   final String country;\n-  final int confirmed;\n-  final int death;\n-  final int recovered;\n-  final int active;\n+  final String confirmed;\n+  final String death;\n+  final String recovered;\n+  final String active;\n   final DateTime date;\n \n   CountrySummaryModel(this.country, this.confirmed, this.death, this.recovered,\n       this.active, this.date);\n"
+                },
+                {
+                    "date": 1635181343125,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,22 +1,22 @@\n class CountrySummaryModel {\n   final String country;\n-  final String confirmed;\n-  final String death;\n-  final String recovered;\n-  final String active;\n+  final int confirmed;\n+  final int death;\n+  final int recovered;\n+  final int active;\n   final DateTime date;\n \n   CountrySummaryModel(this.country, this.confirmed, this.death, this.recovered,\n       this.active, this.date);\n \n   factory CountrySummaryModel.fromJson(Map<String, dynamic> json) {\n     return CountrySummaryModel(\n       json[\"ciudad_municipio\"],\n-      json[\"casos\"],\n-      json[\"fallecidos\"],\n-      json[\"recuperados\"],\n-      json[\"activos\"],\n+      int.parse(json[\"casos\"]),\n+      int.parse(json[\"fallecidos\"]),\n+      int.parse(json[\"recuperados\"]),\n+      int.parse(json[\"activos\"]),\n       DateTime.now(),\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1635181712880,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,8 @@\n       int.parse(json[\"casos\"]),\n       int.parse(json[\"fallecidos\"]),\n       int.parse(json[\"recuperados\"]),\n       int.parse(json[\"activos\"]),\n-      DateTime.now(),\n+      DateTime.parse(json[\"fecha_diagnostico\"]),\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1635181913234,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,8 @@\n       int.parse(json[\"casos\"]),\n       int.parse(json[\"fallecidos\"]),\n       int.parse(json[\"recuperados\"]),\n       int.parse(json[\"activos\"]),\n-      DateTime.parse(json[\"fecha_diagnostico\"]),\n+      DateTime.tryParse(json[\"fecha_diagnostico\"]),\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1635182222671,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,8 @@\n       int.parse(json[\"casos\"]),\n       int.parse(json[\"fallecidos\"]),\n       int.parse(json[\"recuperados\"]),\n       int.parse(json[\"activos\"]),\n-      DateTime.tryParse(json[\"fecha_diagnostico\"]),\n+      DateTime.fromMicrosecondsSinceEpoch(json[\"fecha_diagnostico\"]),\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1635182340804,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n+import 'package:intl/intl.dart';\n+\n class CountrySummaryModel {\n   final String country;\n   final int confirmed;\n   final int death;\n@@ -15,8 +17,8 @@\n       int.parse(json[\"casos\"]),\n       int.parse(json[\"fallecidos\"]),\n       int.parse(json[\"recuperados\"]),\n       int.parse(json[\"activos\"]),\n-      DateTime.fromMicrosecondsSinceEpoch(json[\"fecha_diagnostico\"]),\n+      DateFormat('MM/dd/yyyy, hh:mm a').parse(json[\"fecha_diagnostico\"]),\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1635182393327,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,8 @@\n       int.parse(json[\"casos\"]),\n       int.parse(json[\"fallecidos\"]),\n       int.parse(json[\"recuperados\"]),\n       int.parse(json[\"activos\"]),\n-      DateFormat('MM/dd/yyyy, hh:mm a').parse(json[\"fecha_diagnostico\"]),\n+      DateFormat('MM-dd-yyyyT00:00:00Z').parse(json[\"fecha_diagnostico\"]),\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1635182652046,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,14 +11,17 @@\n   CountrySummaryModel(this.country, this.confirmed, this.death, this.recovered,\n       this.active, this.date);\n \n   factory CountrySummaryModel.fromJson(Map<String, dynamic> json) {\n+    var input =\n+        DateFormat('dd/MM/yyyy, HH:mm').parse(json[\"fecha_diagnostico\"]);\n+    var output = DateFormat(\"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\").format(input);\n+\n     return CountrySummaryModel(\n-      json[\"ciudad_municipio\"],\n-      int.parse(json[\"casos\"]),\n-      int.parse(json[\"fallecidos\"]),\n-      int.parse(json[\"recuperados\"]),\n-      int.parse(json[\"activos\"]),\n-      DateFormat('MM-dd-yyyyT00:00:00Z').parse(json[\"fecha_diagnostico\"]),\n-    );\n+        json[\"ciudad_municipio\"],\n+        int.parse(json[\"casos\"]),\n+        int.parse(json[\"fallecidos\"]),\n+        int.parse(json[\"recuperados\"]),\n+        int.parse(json[\"activos\"]),\n+        DateTime.now());\n   }\n }\n"
+                },
+                {
+                    "date": 1635182748557,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,10 +11,9 @@\n   CountrySummaryModel(this.country, this.confirmed, this.death, this.recovered,\n       this.active, this.date);\n \n   factory CountrySummaryModel.fromJson(Map<String, dynamic> json) {\n-    var input =\n-        DateFormat('dd/MM/yyyy, HH:mm').parse(json[\"fecha_diagnostico\"]);\n+    var input = DateFormat('dd/MM/yyyy HH:mm').parse(json[\"fecha_diagnostico\"]);\n     var output = DateFormat(\"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\").format(input);\n \n     return CountrySummaryModel(\n         json[\"ciudad_municipio\"],\n"
+                },
+                {
+                    "date": 1635183198686,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,16 +11,19 @@\n   CountrySummaryModel(this.country, this.confirmed, this.death, this.recovered,\n       this.active, this.date);\n \n   factory CountrySummaryModel.fromJson(Map<String, dynamic> json) {\n-    var input = DateFormat('dd/MM/yyyy HH:mm').parse(json[\"fecha_diagnostico\"]);\n-    var output = DateFormat(\"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\").format(input);\n+    if (json[\"fecha_diagnostico\"]) {\n+      var input =\n+          DateFormat('dd/MM/yyyy HH:mm').parse(json[\"fecha_diagnostico\"]);\n+      var output = DateFormat(\"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\").format(input);\n \n-    return CountrySummaryModel(\n-        json[\"ciudad_municipio\"],\n-        int.parse(json[\"casos\"]),\n-        int.parse(json[\"fallecidos\"]),\n-        int.parse(json[\"recuperados\"]),\n-        int.parse(json[\"activos\"]),\n-        DateTime.now());\n+      return CountrySummaryModel(\n+          json[\"ciudad_municipio\"],\n+          int.parse(json[\"casos\"]),\n+          int.parse(json[\"fallecidos\"]),\n+          int.parse(json[\"recuperados\"]),\n+          int.parse(json[\"activos\"]),\n+          DateTime.now());\n+    }\n   }\n }\n"
+                },
+                {
+                    "date": 1635183224820,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n   CountrySummaryModel(this.country, this.confirmed, this.death, this.recovered,\n       this.active, this.date);\n \n   factory CountrySummaryModel.fromJson(Map<String, dynamic> json) {\n-    if (json[\"fecha_diagnostico\"]) {\n+    if (json[\"fecha_diagnostico\"] != null) {\n       var input =\n           DateFormat('dd/MM/yyyy HH:mm').parse(json[\"fecha_diagnostico\"]);\n       var output = DateFormat(\"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\").format(input);\n \n"
+                },
+                {
+                    "date": 1635183783639,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n   CountrySummaryModel(this.country, this.confirmed, this.death, this.recovered,\n       this.active, this.date);\n \n   factory CountrySummaryModel.fromJson(Map<String, dynamic> json) {\n-    if (json[\"fecha_diagnostico\"] != null) {\n+   try {\n       var input =\n           DateFormat('dd/MM/yyyy HH:mm').parse(json[\"fecha_diagnostico\"]);\n       var output = DateFormat(\"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\").format(input);\n \n@@ -22,8 +22,17 @@\n           int.parse(json[\"casos\"]),\n           int.parse(json[\"fallecidos\"]),\n           int.parse(json[\"recuperados\"]),\n           int.parse(json[\"activos\"]),\n+          output as DateTime\n+         );\n+    }\n+  catch(err){\n+     return CountrySummaryModel(\n+          json[\"ciudad_municipio\"],\n+          int.parse(json[\"casos\"]),\n+          int.parse(json[\"fallecidos\"]),\n+          int.parse(json[\"recuperados\"]),\n+          int.parse(json[\"activos\"]),\n           DateTime.now());\n-    }\n   }\n }\n"
+                },
+                {
+                    "date": 1635183804357,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n   CountrySummaryModel(this.country, this.confirmed, this.death, this.recovered,\n       this.active, this.date);\n \n   factory CountrySummaryModel.fromJson(Map<String, dynamic> json) {\n-   try {\n+    try {\n       var input =\n           DateFormat('dd/MM/yyyy HH:mm').parse(json[\"fecha_diagnostico\"]);\n       var output = DateFormat(\"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\").format(input);\n \n@@ -22,17 +22,16 @@\n           int.parse(json[\"casos\"]),\n           int.parse(json[\"fallecidos\"]),\n           int.parse(json[\"recuperados\"]),\n           int.parse(json[\"activos\"]),\n-          output as DateTime\n-         );\n-    }\n-  catch(err){\n-     return CountrySummaryModel(\n+          output as DateTime);\n+    } catch (err) {\n+      return CountrySummaryModel(\n           json[\"ciudad_municipio\"],\n           int.parse(json[\"casos\"]),\n           int.parse(json[\"fallecidos\"]),\n           int.parse(json[\"recuperados\"]),\n           int.parse(json[\"activos\"]),\n           DateTime.now());\n+    }\n   }\n }\n"
+                },
+                {
+                    "date": 1635184790633,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n   CountrySummaryModel(this.country, this.confirmed, this.death, this.recovered,\n       this.active, this.date);\n \n   factory CountrySummaryModel.fromJson(Map<String, dynamic> json) {\n-    try {\n+    if (json[\"fecha_diagnostico\"] != null) {\n       var input =\n           DateFormat('dd/MM/yyyy HH:mm').parse(json[\"fecha_diagnostico\"]);\n       var output = DateFormat(\"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\").format(input);\n \n@@ -23,9 +23,9 @@\n           int.parse(json[\"fallecidos\"]),\n           int.parse(json[\"recuperados\"]),\n           int.parse(json[\"activos\"]),\n           output as DateTime);\n-    } catch (err) {\n+    } else {\n       return CountrySummaryModel(\n           json[\"ciudad_municipio\"],\n           int.parse(json[\"casos\"]),\n           int.parse(json[\"fallecidos\"]),\n"
+                },
+                {
+                    "date": 1635184900754,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n           int.parse(json[\"casos\"]),\n           int.parse(json[\"fallecidos\"]),\n           int.parse(json[\"recuperados\"]),\n           int.parse(json[\"activos\"]),\n-          output as DateTime);\n+          DateTime.parse(output));\n     } else {\n       return CountrySummaryModel(\n           json[\"ciudad_municipio\"],\n           int.parse(json[\"casos\"]),\n"
+                }
+            ],
+            "date": 1633968414809,
+            "name": "Commit-0",
+            "content": "class CountrySummaryModel {\n  final String country;\n  final int confirmed;\n  final int death;\n  final int recovered;\n  final int active;\n  final DateTime date;\n\n  CountrySummaryModel(this.country, this.confirmed, this.death, this.recovered,\n      this.active, this.date);\n\n  factory CountrySummaryModel.fromJson(Map<String, dynamic> json) {\n    return CountrySummaryModel(\n      json[\"departamento_nom\"],\n      json[\"Confirmed\"],\n      json[\"Deaths\"],\n      json[\"Recovered\"],\n      json[\"Active\"],\n      DateTime.parse(json[\"Date\"]),\n    );\n  }\n}\n"
+        }
+    ]
+}

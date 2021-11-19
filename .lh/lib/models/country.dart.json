@@ -1,0 +1,22 @@
+{
+    "sourceFile": "lib/models/country.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1633883168855,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1633968346880,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,10 +6,10 @@\n   CountryModel(this.country, this.slug, this.iso2);\n \n   factory CountryModel.fromJson(Map<String, dynamic> json) {\n     return CountryModel(\n-      json[\"nombre_departamento\"],\n-      json[\"codigo_departamento\"],\n-      json[\"codigo_departamento\"],\n+      json[\"municipio\"],\n+      json[\"c_digo_dane_del_municipio\"],\n+      json[\"c_digo_dane_del_municipio\"],\n     );\n   }\n }\n"
+                }
+            ],
+            "date": 1633883168855,
+            "name": "Commit-0",
+            "content": "class CountryModel {\n  final String country;\n  final String slug;\n  final String iso2;\n\n  CountryModel(this.country, this.slug, this.iso2);\n\n  factory CountryModel.fromJson(Map<String, dynamic> json) {\n    return CountryModel(\n      json[\"nombre_departamento\"],\n      json[\"codigo_departamento\"],\n      json[\"codigo_departamento\"],\n    );\n  }\n}\n"
+        }
+    ]
+}

@@ -1,0 +1,98 @@
+{
+    "sourceFile": "lib/screens/tracker.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 20,
+            "patches": [
+                {
+                    "date": 1635187134918,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1635188250095,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n       appBar: AppBar(\n         backgroundColor: kPrimaryColor,\n         elevation: 0,\n         title: Text(\n-          \"COVID LIVE\",\n+          \"VENECAS LIVE\",\n         ),\n         centerTitle: true,\n       ),\n       body: Column(\n"
+                },
+                {
+                    "date": 1635188268034,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n       appBar: AppBar(\n         backgroundColor: kPrimaryColor,\n         elevation: 0,\n         title: Text(\n-          \"VENECAS LIVE\",\n+          \"VENECAS CON VIH LIVE\",\n         ),\n         centerTitle: true,\n       ),\n       body: Column(\n"
+                },
+                {
+                    "date": 1635188277019,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n       appBar: AppBar(\n         backgroundColor: kPrimaryColor,\n         elevation: 0,\n         title: Text(\n-          \"VENECAS CON VIH LIVE\",\n+          \"VENECAS CON VIH CHECKER\",\n         ),\n         centerTitle: true,\n       ),\n       body: Column(\n"
+                },
+                {
+                    "date": 1635188385316,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n       appBar: AppBar(\n         backgroundColor: kPrimaryColor,\n         elevation: 0,\n         title: Text(\n-          \"VENECAS CON VIH CHECKER\",\n+          \"XxCOVID69xX\",\n         ),\n         centerTitle: true,\n       ),\n       body: Column(\n"
+                },
+                {
+                    "date": 1635188403874,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n       appBar: AppBar(\n         backgroundColor: kPrimaryColor,\n         elevation: 0,\n         title: Text(\n-          \"XxCOVID69xX\",\n+          \"XxCOVID69_PUSSYDRESTROYERxX\",\n         ),\n         centerTitle: true,\n       ),\n       body: Column(\n"
+                },
+                {
+                    "date": 1635188421873,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n       appBar: AppBar(\n         backgroundColor: kPrimaryColor,\n         elevation: 0,\n         title: Text(\n-          \"XxCOVID69_PUSSYDRESTROYERxX\",\n+          \"XxCOVID69_PUSSYDRESTROYER_VENECASALUKxX\",\n         ),\n         centerTitle: true,\n       ),\n       body: Column(\n"
+                },
+                {
+                    "date": 1635188437364,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n       appBar: AppBar(\n         backgroundColor: kPrimaryColor,\n         elevation: 0,\n         title: Text(\n-          \"XxCOVID69_PUSSYDRESTROYER_VENECASALUKxX\",\n+          \"CORONA KING LIVE XD\",\n         ),\n         centerTitle: true,\n       ),\n       body: Column(\n"
+                },
+                {
+                    "date": 1635188466791,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n       appBar: AppBar(\n         backgroundColor: kPrimaryColor,\n         elevation: 0,\n         title: Text(\n-          \"CORONA KING LIVE XD\",\n+          \"COVID-19 EN TIEMPO REAL\",\n         ),\n         centerTitle: true,\n       ),\n       body: Column(\n"
+                },
+                {
+                    "date": 1635188474803,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n       appBar: AppBar(\n         backgroundColor: kPrimaryColor,\n         elevation: 0,\n         title: Text(\n-          \"COVID-19 EN TIEMPO REAL\",\n+          \"COVID-19 UNAB\",\n         ),\n         centerTitle: true,\n       ),\n       body: Column(\n"
+                },
+                {
+                    "date": 1636988179577,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,8 +73,17 @@\n                     setState(() {\n                       navigationStatus = NavigationStatus.COUNTRY;\n                     });\n                   },\n+                ),\n+                NavigationOption(\n+                  title: \"Colombia\",\n+                  selected: navigationStatus == NavigationStatus.COUNTRY,\n+                  onSelected: () {\n+                    setState(() {\n+                      navigationStatus = NavigationStatus.COUNTRY;\n+                    });\n+                  },\n                 )\n               ],\n             ),\n           ),\n"
+                },
+                {
+                    "date": 1636988882176,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,11 +3,13 @@\n import '../utils/constants.dart';\n import '../screens/navigation_option.dart';\n import '../screens/global.dart';\n import '../screens/country.dart';\n+import '../screens/form.dart';\n \n enum NavigationStatus {\n   GLOBAL,\n+  FORM,\n   COUNTRY,\n }\n \n class Tracker extends StatefulWidget {\n@@ -76,12 +78,12 @@\n                   },\n                 ),\n                 NavigationOption(\n                   title: \"Colombia\",\n-                  selected: navigationStatus == NavigationStatus.COUNTRY,\n+                  selected: navigationStatus == NavigationStatus.FORM,\n                   onSelected: () {\n                     setState(() {\n-                      navigationStatus = NavigationStatus.COUNTRY;\n+                      navigationStatus = NavigationStatus.FORM;\n                     });\n                   },\n                 )\n               ],\n"
+                },
+                {
+                    "date": 1636988913371,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,10 +7,10 @@\n import '../screens/form.dart';\n \n enum NavigationStatus {\n   GLOBAL,\n+  COUNTRY,\n   FORM,\n-  COUNTRY,\n }\n \n class Tracker extends StatefulWidget {\n   @override\n@@ -76,17 +76,8 @@\n                       navigationStatus = NavigationStatus.COUNTRY;\n                     });\n                   },\n                 ),\n-                NavigationOption(\n-                  title: \"Colombia\",\n-                  selected: navigationStatus == NavigationStatus.FORM,\n-                  onSelected: () {\n-                    setState(() {\n-                      navigationStatus = NavigationStatus.FORM;\n-                    });\n-                  },\n-                )\n               ],\n             ),\n           ),\n         ],\n"
+                },
+                {
+                    "date": 1636988926087,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,14 +3,12 @@\n import '../utils/constants.dart';\n import '../screens/navigation_option.dart';\n import '../screens/global.dart';\n import '../screens/country.dart';\n-import '../screens/form.dart';\n \n enum NavigationStatus {\n   GLOBAL,\n   COUNTRY,\n-  FORM,\n }\n \n class Tracker extends StatefulWidget {\n   @override\n"
+                },
+                {
+                    "date": 1636989331221,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,13 +3,11 @@\n import '../utils/constants.dart';\n import '../screens/navigation_option.dart';\n import '../screens/global.dart';\n import '../screens/country.dart';\n+import '../screens/form.dart';\n \n-enum NavigationStatus {\n-  GLOBAL,\n-  COUNTRY,\n-}\n+enum NavigationStatus { GLOBAL, COUNTRY, FORM }\n \n class Tracker extends StatefulWidget {\n   @override\n   _TrackerState createState() => _TrackerState();\n@@ -74,8 +72,17 @@\n                       navigationStatus = NavigationStatus.COUNTRY;\n                     });\n                   },\n                 ),\n+                NavigationOption(\n+                  title: \"Globales\",\n+                  selected: navigationStatus == NavigationStatus.FORM,\n+                  onSelected: () {\n+                    setState(() {\n+                      navigationStatus = NavigationStatus.FORM;\n+                    });\n+                  },\n+                ),\n               ],\n             ),\n           ),\n         ],\n"
+                },
+                {
+                    "date": 1636989540450,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n                   )),\n               child: AnimatedSwitcher(\n                 duration: Duration(milliseconds: 250),\n                 child: navigationStatus == NavigationStatus.GLOBAL\n-                    ? Global()\n+                    ? Form()\n                     : Country(),\n               ),\n             ),\n           ),\n"
+                },
+                {
+                    "date": 1636989756074,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n                   )),\n               child: AnimatedSwitcher(\n                 duration: Duration(milliseconds: 250),\n                 child: navigationStatus == NavigationStatus.GLOBAL\n-                    ? Form()\n+                    ? Global()\n                     : Country(),\n               ),\n             ),\n           ),\n"
+                },
+                {
+                    "date": 1636989774253,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n               child: AnimatedSwitcher(\n                 duration: Duration(milliseconds: 250),\n                 child: navigationStatus == NavigationStatus.GLOBAL\n                     ? Global()\n-                    : Country(),\n+                    : Form(),\n               ),\n             ),\n           ),\n           Container(\n"
+                },
+                {
+                    "date": 1636989827850,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n               child: AnimatedSwitcher(\n                 duration: Duration(milliseconds: 250),\n                 child: navigationStatus == NavigationStatus.GLOBAL\n                     ? Global()\n-                    : Form(),\n+                    : FormScreen(),\n               ),\n             ),\n           ),\n           Container(\n"
+                },
+                {
+                    "date": 1636990060960,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,11 @@\n               child: AnimatedSwitcher(\n                 duration: Duration(milliseconds: 250),\n                 child: navigationStatus == NavigationStatus.GLOBAL\n                     ? Global()\n-                    : FormScreen(),\n+                    : (navigationStatus == NavigationStatus.COUNTRY\n+                        ? Country()\n+                        : FormScreen()),\n               ),\n             ),\n           ),\n           Container(\n"
+                },
+                {
+                    "date": 1636990081656,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n                     });\n                   },\n                 ),\n                 NavigationOption(\n-                  title: \"Globales\",\n+                  title: \"Reportar\",\n                   selected: navigationStatus == NavigationStatus.FORM,\n                   onSelected: () {\n                     setState(() {\n                       navigationStatus = NavigationStatus.FORM;\n"
+                }
+            ],
+            "date": 1635187134918,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\n\nimport '../utils/constants.dart';\nimport '../screens/navigation_option.dart';\nimport '../screens/global.dart';\nimport '../screens/country.dart';\n\nenum NavigationStatus {\n  GLOBAL,\n  COUNTRY,\n}\n\nclass Tracker extends StatefulWidget {\n  @override\n  _TrackerState createState() => _TrackerState();\n}\n\nclass _TrackerState extends State<Tracker> {\n  NavigationStatus navigationStatus = NavigationStatus.GLOBAL;\n\n  @override\n  Widget build(BuildContext context) {\n    Size size = MediaQuery.of(context).size;\n\n    return Scaffold(\n      resizeToAvoidBottomPadding: false,\n      appBar: AppBar(\n        backgroundColor: kPrimaryColor,\n        elevation: 0,\n        title: Text(\n          \"COVID LIVE\",\n        ),\n        centerTitle: true,\n      ),\n      body: Column(\n        crossAxisAlignment: CrossAxisAlignment.stretch,\n        children: <Widget>[\n          Expanded(\n            child: Container(\n              padding: EdgeInsets.all(32),\n              decoration: BoxDecoration(\n                  color: kPrimaryColor,\n                  borderRadius: BorderRadius.only(\n                    bottomRight: Radius.circular(50),\n                    bottomLeft: Radius.circular(50),\n                  )),\n              child: AnimatedSwitcher(\n                duration: Duration(milliseconds: 250),\n                child: navigationStatus == NavigationStatus.GLOBAL\n                    ? Global()\n                    : Country(),\n              ),\n            ),\n          ),\n          Container(\n            height: size.height * 0.1,\n            child: Row(\n              mainAxisAlignment: MainAxisAlignment.spaceEvenly,\n              children: <Widget>[\n                NavigationOption(\n                  title: \"Globales\",\n                  selected: navigationStatus == NavigationStatus.GLOBAL,\n                  onSelected: () {\n                    setState(() {\n                      navigationStatus = NavigationStatus.GLOBAL;\n                    });\n                  },\n                ),\n                NavigationOption(\n                  title: \"Colombia\",\n                  selected: navigationStatus == NavigationStatus.COUNTRY,\n                  onSelected: () {\n                    setState(() {\n                      navigationStatus = NavigationStatus.COUNTRY;\n                    });\n                  },\n                )\n              ],\n            ),\n          ),\n        ],\n      ),\n    );\n  }\n}\n"
+        }
+    ]
+}

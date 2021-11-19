@@ -1,0 +1,50 @@
+{
+    "sourceFile": "lib/utils/constants.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 8,
+            "patches": [
+                {
+                    "date": 1635187355895,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1635187972362,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n import 'package:flutter/material.dart';\n \n-Color kPrimaryColor = Color(0xff1c61a4);\n-Color kConfirmedColor = Color(0xff1c61a4);\n-Color kActiveColor = Color(0xffea8110);\n-Color kRecoveredColor = Color(0xff29bd7c);\n-Color kDeathColor = Color(0xff9e1717);\n+Color kPrimaryColor = Color(0xff0b0340);\n+Color kConfirmedColor = Color(0xff0b0340);\n+Color kActiveColor = Color(0xfff2b90c);\n+Color kRecoveredColor = Color(0xff33a650);\n+Color kDeathColor = Color(0xffbf0413);\n \n LinearGradient kGradientShimmer = LinearGradient(\n   begin: Alignment.centerLeft,\n   end: Alignment.centerRight,\n"
+                },
+                {
+                    "date": 1635188096953,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import 'package:flutter/material.dart';\n \n-Color kPrimaryColor = Color(0xff0b0340);\n-Color kConfirmedColor = Color(0xff0b0340);\n+Color kPrimaryColor = Color(0xff0147ff);\n+Color kConfirmedColor = Color(0xff0147ff);\n Color kActiveColor = Color(0xfff2b90c);\n Color kRecoveredColor = Color(0xff33a650);\n Color kDeathColor = Color(0xffbf0413);\n \n"
+                },
+                {
+                    "date": 1635188108129,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import 'package:flutter/material.dart';\n \n Color kPrimaryColor = Color(0xff0147ff);\n-Color kConfirmedColor = Color(0xff0147ff);\n+Color kConfirmedColor = Color(0xff0b0340);\n Color kActiveColor = Color(0xfff2b90c);\n Color kRecoveredColor = Color(0xff33a650);\n Color kDeathColor = Color(0xffbf0413);\n \n"
+                },
+                {
+                    "date": 1635188137967,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import 'package:flutter/material.dart';\n \n Color kPrimaryColor = Color(0xff0147ff);\n-Color kConfirmedColor = Color(0xff0b0340);\n+Color kConfirmedColor = Color(0xff0147ff);\n Color kActiveColor = Color(0xfff2b90c);\n Color kRecoveredColor = Color(0xff33a650);\n Color kDeathColor = Color(0xffbf0413);\n \n"
+                },
+                {
+                    "date": 1635188147926,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import 'package:flutter/material.dart';\n \n Color kPrimaryColor = Color(0xff0147ff);\n-Color kConfirmedColor = Color(0xff0147ff);\n+Color kConfirmedColor = Color(0xff0b0340);\n Color kActiveColor = Color(0xfff2b90c);\n Color kRecoveredColor = Color(0xff33a650);\n Color kDeathColor = Color(0xffbf0413);\n \n"
+                },
+                {
+                    "date": 1635188172711,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import 'package:flutter/material.dart';\n \n Color kPrimaryColor = Color(0xff0147ff);\n Color kConfirmedColor = Color(0xff0b0340);\n-Color kActiveColor = Color(0xfff2b90c);\n+Color kActiveColor = Color(0xfff29727);\n Color kRecoveredColor = Color(0xff33a650);\n Color kDeathColor = Color(0xffbf0413);\n \n LinearGradient kGradientShimmer = LinearGradient(\n"
+                },
+                {
+                    "date": 1635188192855,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import 'package:flutter/material.dart';\n \n Color kPrimaryColor = Color(0xff0147ff);\n Color kConfirmedColor = Color(0xff0b0340);\n-Color kActiveColor = Color(0xfff29727);\n+Color kActiveColor = Color(0xfff2b90c);\n Color kRecoveredColor = Color(0xff33a650);\n Color kDeathColor = Color(0xffbf0413);\n \n LinearGradient kGradientShimmer = LinearGradient(\n"
+                },
+                {
+                    "date": 1635188202081,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import 'package:flutter/material.dart';\n \n Color kPrimaryColor = Color(0xff0147ff);\n Color kConfirmedColor = Color(0xff0b0340);\n-Color kActiveColor = Color(0xfff2b90c);\n+Color kActiveColor = Color(0xfff29727);\n Color kRecoveredColor = Color(0xff33a650);\n Color kDeathColor = Color(0xffbf0413);\n \n LinearGradient kGradientShimmer = LinearGradient(\n"
+                }
+            ],
+            "date": 1635187355895,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\n\nColor kPrimaryColor = Color(0xff1c61a4);\nColor kConfirmedColor = Color(0xff1c61a4);\nColor kActiveColor = Color(0xffea8110);\nColor kRecoveredColor = Color(0xff29bd7c);\nColor kDeathColor = Color(0xff9e1717);\n\nLinearGradient kGradientShimmer = LinearGradient(\n  begin: Alignment.centerLeft,\n  end: Alignment.centerRight,\n  colors: [\n    Colors.grey[300],\n    Colors.grey[100],\n  ],\n);\n\nRegExp reg = new RegExp(r'(\\d{1,3})(?=(\\d{3})+(?!\\d))');\nFunction mathFunc = (Match match) => '${match[1]}.';\n"
+        }
+    ]
+}
